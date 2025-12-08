@@ -15,7 +15,7 @@
   <tbody>
     {% for producto in productos %}
     <tr>
-      <td><a href="{% url 'producto_detalle' producto.id %}"> <button class="btn btn-primary">Ver</button></a></td>
+      <td><a href="{% url 'productos:detalle' producto.id %}"> <button class="btn btn-primary">Ver</button></a></td>
       <td>{{ producto.nombre }}</td>
       <td>{{ producto.stock }}</td>
       <td>{{ producto.puntaje }}</td>
