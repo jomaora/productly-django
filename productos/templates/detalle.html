@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Detalle del producto</h1>
+<div class="container">
+  <p>{{ producto.nombre }}</p>
+  <p>{{ producto.stock }}</p>
+  <p>{{ producto.puntaje }}</p>
+  <p>{{ producto.categoria.nombre }}</p>
+  <p>{{ producto.creado_en }}</p>
+  <a href="{% url 'index' %}"> <button class="btn btn-primary">Volver</button></a>
+</div>
+{% endblock %}

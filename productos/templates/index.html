@@ -5,6 +5,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>Acción</th>
       <th>Nombre</th>
       <th>Stock</th>
       <th>Puntaje</th>
@@ -14,6 +15,7 @@
   <tbody>
     {% for producto in productos %}
     <tr>
+      <td><a href="{% url 'producto_detalle' producto.id %}"> <button class="btn btn-primary">Ver</button></a></td>
       <td>{{ producto.nombre }}</td>
       <td>{{ producto.stock }}</td>
       <td>{{ producto.puntaje }}</td>
