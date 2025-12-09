@@ -5,3 +5,4 @@ class ProductoForm(ModelForm):
   class Meta:
     model = models.Producto
     fields = ['nombre', 'stock', 'puntaje', 'categoria']
+
