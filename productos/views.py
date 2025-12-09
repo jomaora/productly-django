@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Producto
 from .forms import ProductoForm
+from django.http import HttpResponseRedirect
 
 def index(request):
   productos = Producto.objects.select_related('categoria').all()
@@ -12,5 +13,12 @@ def detalle(request, producto_id):
   return render(request, 'detalle.html', context={'producto': producto})
 
 def formulario(request):
-  form = ProductoForm()
+  if request.method == 'POST':
+    form = ProductoForm(request.POST)
+    if form.is_valid():
+      form.save()
+      return HttpResponseRedirect('/productos')
+  else:
+    form = ProductoForm()
+
   return render(request, 'formulario.html', context={'form': form})
